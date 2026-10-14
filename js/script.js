@@ -28,6 +28,35 @@
     });
   }
 
+  // Thème clair / sombre avec mémorisation du choix
+  const themeButton = document.querySelector(".theme-toggle");
+  const themeIcon = document.querySelector(".theme-icon");
+  const themeLabel = document.querySelector(".theme-toggle-label");
+  const themeColorMeta = document.querySelector("#theme-color-meta");
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
+    document.documentElement.dataset.theme = isDark ? "dark" : "light";
+    if (themeButton) {
+      themeButton.setAttribute("aria-pressed", String(isDark));
+      themeButton.setAttribute("aria-label", isDark ? "Activer le thème clair" : "Activer le thème sombre");
+    }
+    if (themeIcon) themeIcon.textContent = isDark ? "☀" : "☾";
+    if (themeLabel) themeLabel.textContent = isDark ? "Clair" : "Sombre";
+    if (themeColorMeta) themeColorMeta.setAttribute("content", isDark ? "#171916" : "#f6f5f1");
+  }
+
+  applyTheme(savedTheme || (systemPrefersDark ? "dark" : "light"));
+  if (themeButton) {
+    themeButton.addEventListener("click", () => {
+      const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      localStorage.setItem("portfolio-theme", nextTheme);
+    });
+  }
+
   const year = document.querySelector("#year");
   if (year) year.textContent = new Date().getFullYear();
 

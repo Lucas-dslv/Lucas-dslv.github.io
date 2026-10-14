@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f5f1">
+  <meta name="theme-color" content="#f6f5f1" id="theme-color-meta">
   <meta name="description"
     content="Portfolio de Lucas Da Silva, étudiant en informatique. Projets, compétences et contact.">
   <meta property="og:title" content="Lucas Da Silva — Étudiant en informatique">
@@ -33,6 +33,8 @@
       <a href="#apropos">À propos <span>02</span></a>
       <a href="#competences">Compétences <span>03</span></a>
       <a class="nav-contact" href="#contact">Me contacter <span aria-hidden="true">↗</span></a>
+      <button class="theme-toggle" type="button" aria-label="Activer le thème sombre" aria-pressed="false"><span
+          class="theme-icon" aria-hidden="true">☾</span><span class="theme-toggle-label">Thème</span></button>
     </nav>
   </header>
 
@@ -88,8 +90,6 @@
               <h3>Application web</h3>
             </div><span class="project-arrow" aria-hidden="true">↗</span>
           </div>
-          <p>Une interface pensée pour être claire, rapide et agréable à utiliser. Présente ici ton application ou ton
-            site.</p>
           <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
         </article>
         <article class="project-card reveal">
@@ -110,7 +110,6 @@
               <h3>Outil & automatisation</h3>
             </div><span class="project-arrow" aria-hidden="true">↗</span>
           </div>
-          <p>Un petit outil qui résout un problème réel. Décris le besoin, ton approche et le résultat obtenu.</p>
           <div class="tag-list"><span>À compléter</span><span>Git</span></div>
         </article>
         <article class="project-card reveal">
@@ -124,13 +123,9 @@
               <h3>Expérimentation</h3>
             </div><span class="project-arrow" aria-hidden="true">↗</span>
           </div>
-          <p>Un projet personnel pour tester une technologie, apprendre une nouvelle méthode ou sortir de ta zone de
-            confort.</p>
           <div class="tag-list"><span>Recherche</span><span>Apprentissage</span></div>
         </article>
       </div>
-      <p class="projects-note"><span aria-hidden="true">✳</span> Les projets sont des modèles de présentation, pas des
-        réalisations revendiquées. Personnalise-les avant publication.</p>
     </section>
 
     <section class="about section-wrap section-space" id="apropos">
