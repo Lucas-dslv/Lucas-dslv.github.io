@@ -232,6 +232,7 @@ html[data-theme="dark"] .navigation { background: var(--paper); }
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  border: 1px solid #242820;
 }
 
 .project-visual:hover img {
